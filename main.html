@@ -1,0 +1,270 @@
+
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<meta name="description" content="">
+<meta name="author" content="">
+<title>项目主页</title>
+<!-- 引导核心CSS -->
+<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- 引导主题 -->
+<link href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"
+	rel="stylesheet">
+<!-- 针对Surface/桌面Windows 8错误的IE10视口攻击 -->
+<link href="bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css"
+	rel="stylesheet">
+<!-- 此模板的自定义样式 -->
+<link href="bootstrap-3.3.7-dist/css/theme.css" rel="stylesheet">
+<link rel="stylesheet" href="bootstrap-3.3.7-dist/clock.css">
+
+
+
+
+<!-- 设置悬停事件 -->
+<script>
+	//悬停事件
+	function over(x) {
+		with (x) {
+			small_head.src = "pic/头像2.jpg";
+		}
+	}
+	//离开事件
+	function leave(x) {
+		with (x) {
+			small_head.src = "pic/头像1.jpg";
+		}
+	}
+	function content_change(name){
+		document.getElementById("header").innerHTML=name.substring(0, name.indexOf('.'))
+		document.getElementById("iframe1").src=name
+	}
+
+
+</script>
+
+
+</head>
+<body>
+<body style='background: transparent'>
+
+	<!-- 导航部分 -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="main.html">项目主页</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<!-- 意思是当前激活的 -->
+					<li class="active"><a href="#">主页</a></li>
+					<li><a href="edit.html">项目进展</a></li>
+					<li><a href="http://localhost:8080/myweb/piano.jsp">其他（暂时不可点击）</a></li>
+				</ul>
+
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><img src="pic/头像1.jpg" alt="个人头像" width="45" height="45"
+							class="img-circle" name="small_head" onmouseover="over(this)"
+							onmouseleave="leave(this)"></li>
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false">您好 ，欢迎来到我们的网站 <span
+								class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a
+									href="${pageContext.request.contextPath}/AdminServlet?action=logout">注销（暂时不可点击）</a></li>
+								<li><a
+									href="http://localhost:8080/myweb/edit_change_admin.jsp">修改账户（暂时不可点击）</a></li>
+							</ul></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- container -->
+	</nav>
+
+
+	<div class="container theme-showcase" role="main">
+		<div class="jumbotron">
+			<h1>欢迎来到项目主页</h1>
+			<p>以下是项目总体介绍！</p>
+			<p>
+
+		</div>
+
+
+		<!-- 文字 -->
+		<div class="page-header">
+			<h1 id="header">潮控三角洲</h1>
+		</div>
+		<div class="well" >
+			<iframe src="潮控三角洲.html" id=iframe1 width=1100px height=400px></iframe>
+			
+		</div>
+
+		<!-- 按钮 -->
+		
+			
+			<p>
+				<button type="button" class="btn btn-lg btn-default" name="people"
+					value="1" id="潮控三角洲" onclick="content_change('潮控三角洲.html')">潮控三角洲</button>
+				<button type="button" class="btn btn-lg btn-primary" name="people"
+					value="2" onclick="content_change('河控三角洲.html')">河控三角洲</button>
+				<button type="submit" class="btn btn-lg btn-success" name="people"
+					value="3" onclick="content_change('浪控三角洲.html')">浪控三角洲</button>
+				<button type="submit" class="btn btn-lg btn-info" name="people"
+					value="4">特色与创行（暂时不可点击）</button>
+				<button type="submit" class="btn btn-lg btn-warning" name="people"
+					value="5"></button>
+				<button type="submit" class="btn btn-lg btn-danger" name="people"
+					value="6"></button>
+				<a type="button" class="btn btn-lg btn-link"
+					href="https://news.sina.com.cn/">一个链接</a>
+			</p>
+		
+		<!-- 滚动条 -->
+
+		<div class="page-header">
+			<h1>总体进度</h1>
+		</div>
+		<form
+			action="${pageContext.request.contextPath}/PeopleServlet?action=updateGrade"
+			method="post">
+			<p>
+				<button class="label label-primary" type="submit" name="type"
+					value="1">可修改：（暂时不可点击）</button>
+				<input type="text" name="1"
+					placeholder="${sessionScope.gradeList[0].grade}"></input>
+			</p>
+			<div class="progress" id="progress1">
+				<div class="progress-bar" role="progressbar" aria-valuenow="60"
+					aria-valuemin="0" aria-valuemax="100"
+					style="width: ${sessionScope.gradeList[0].grade};"
+					id="morality_process"></div>
+			</div>
+			<p>
+				<button class="label label-success" type="submit" name="type"
+					value="2">可修改：（暂时不可点击）</button>
+				<input type="text" name="2"
+					placeholder="${sessionScope.gradeList[1].grade}"></input>
+			</p>
+			<div class="progress">
+				<div class="progress-bar progress-bar-success" role="progressbar"
+					aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+					style="width: ${sessionScope.gradeList[1].grade};"></div>
+			</div>
+
+			<p>
+				<button class="label label-info" type="submit" name="type" value="3">可修改：（暂时不可点击）</button>
+				<input type="text" name="3"
+					placeholder="${sessionScope.gradeList[2].grade}"></input>
+			</p>
+			<div class="progress">
+				<div class="progress-bar progress-bar-info" role="progressbar"
+					aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+					style="width: ${sessionScope.gradeList[2].grade}">
+					<span class="sr-only">20% Complete</span>
+				</div>
+			</div>
+
+			<p>
+				<button class="label label-warning" type="submit" name="type"
+					value="4">可修改：（暂时不可点击）</button>
+				<input type="text" name="4"
+					placeholder="${sessionScope.gradeList[3].grade}"></input>
+			</p>
+			<div class="progress">
+				<div class="progress-bar progress-bar-warning" role="progressbar"
+					aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+					style="width: ${sessionScope.gradeList[3].grade}">
+					<span class="sr-only">60% Complete (warning)</span>
+				</div>
+			</div>
+
+			<p>
+				<button class="label label-danger" type="submit" name="type"
+					value="5">可修改：（暂时不可点击）</button>
+				<input type="text" name="5"
+					placeholder="${sessionScope.gradeList[4].grade}"></input>
+			</p>
+			<div class="progress">
+				<div class="progress-bar progress-bar-danger" role="progressbar"
+					aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+					style="width: ${sessionScope.gradeList[4].grade}">
+					<span class="sr-only">80% Complete (danger)</span>
+				</div>
+			</div>
+		</form>
+
+		<!-- 图片 -->
+		<div class="page-header">
+			<h1>图片展示</h1>
+		</div>
+		<div id="carousel-example-generic" class="carousel slide"
+			data-ride="carousel">
+			<!-- 三个小点 -->
+			<ol class="carousel-indicators">
+				<li data-target="#carousel-example-generic" data-slide-to="0"
+					class="active"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			</ol>
+			<!-- 图片部分 -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<img src="pic/my_school_1.jpg" alt="First slide"
+						class="img-thumbnail">
+				</div>
+				<div class="item">
+					<img src="pic/my_school_2.jpg" alt="Second slide"
+						class="img-thumbnail">
+				</div>
+				<div class="item">
+					<img src="pic/my_school_3.jpg" alt="Third slide"
+						class="img-thumbnail">
+				</div>
+			</div>
+			<!-- 左右箭头部分 -->
+			<a class="left carousel-control" href="#carousel-example-generic"
+				role="button" data-slide="prev"> <span
+				class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a> <a class="right carousel-control" href="#carousel-example-generic"
+				role="button" data-slide="next"> <span
+				class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+
+	</div>
+	<!-- container -->
+
+
+	<script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+	<!-- Bootstrap core JavaScript-->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="bootstrap-3.3.7-dist/js/jquery.min.js"></script>
+	<script>
+		window.jQuery
+				|| document
+						.write('<script src="bootstrap-3.3.7-dist/js/jquery.min.js"><\/script>')
+	</script>
+	<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<script src="bootstrap-3.3.7-dist/js/docs.min.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+
+</body>
+</html>

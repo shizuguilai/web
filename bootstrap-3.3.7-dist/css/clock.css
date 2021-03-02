@@ -1,0 +1,112 @@
+@charset "UTF-8";
+body {
+  
+  margin: 0;
+}
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.face {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vmin;
+  height: 20vmin;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(ellipse at center, #C0C0C0 30%, #e1ecde 68%, #079554 calc( 68% + 1px ));
+  box-shadow: -0.3vmin -0.3vmin 0.1vmin #e1ecde, 1vmin 1vmin 0.1vmin #44a7ac;
+}
+.face:after {
+  content: '';
+  display: block;
+  width: 3.5vmin;
+  height: 3.5vmin;
+  border-radius: 50%;
+  background-color: #f8ccce;
+  position: absolute;
+}
+
+.quarter {
+  height: 80%;
+  width: 80%;
+  position: absolute;
+}
+.quarter div {
+  height: 10%;
+  width: 2.4%;
+  border-radius: 1vmin;
+  background-color: #c41a21;
+  position: absolute;
+}
+.quarter div:nth-child(even) {
+  top: 45%;
+  transform: rotate(90deg);
+}
+.quarter div:nth-child(odd) {
+  left: 48.8%;
+}
+.quarter div:nth-child(1) {
+  top: 0;
+}
+.quarter div:nth-child(2) {
+  right: 3%;
+}
+.quarter div:nth-child(3) {
+  bottom: 0;
+}
+.quarter div:nth-child(4) {
+  left: 3%;
+}
+
+.seeds {
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+.seeds div {
+  display: block;
+  height: 3.5vmin;
+  width: 2vmin;
+  background-color: #e32f36;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: absolute;
+}
+
+
+
+
+.hands div {
+  position: absolute;
+  bottom: 50%;
+  border-radius: 1vmin;
+  transform-origin: 50% 100%;
+  transform: rotate(0);
+}
+.hands div.h {
+  height: 27%;
+  width: 2.4%;
+  left: 48.8%;
+  background-color: #6f0f13;
+}
+.hands div.m {
+  height: 40%;
+  width: 2.4%;
+  left: 48.8%;
+  background-color: #a0161b;
+}
+.hands div.s {
+  height: 50%;
+  width: 1%;
+  left: 49.5%;
+  bottom: 40%;
+  transform-origin: 50% 80%;
+  background-color: #f8ccce;
+}

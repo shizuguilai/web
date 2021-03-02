@@ -1,0 +1,208 @@
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<meta name="description" content="">
+<meta name="author" content="">
+<title>项目进展界面</title>
+<!-- 引导核心CSS -->
+<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- 引导主题 -->
+<link href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"
+	rel="stylesheet">
+<!-- 针对Surface/桌面Windows 8错误的IE10视口攻击 -->
+<link href="bootstrap-3.3.7-dist/css/ie10-viewport-bug-workaround.css"
+	rel="stylesheet">
+<!-- 此模板的自定义样式 -->
+<link href="bootstrap-3.3.7-dist/css/dashboard.css" rel="stylesheet">
+<script>
+	//悬停事件
+	function over(x) {
+		with (x) {
+			small_head.src = "pic/头像2.jpg";
+		}
+	}
+	//离开事件
+	function leave(x) {
+		with (x) {
+			small_head.src = "pic/头像1.jpg";
+		}
+	}
+</script>
+</head>
+
+<body>
+	<!-- 导航部分 -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="main.html">项目主页</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="main.html">主页</a></li>
+					<!-- 意思是当前激活的 -->
+					<li class="active"><a href="#">项目进展</a></li>
+					<li><a href="#">其他（暂时不可点击）</a></li>
+				</ul>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+					<li><img src="pic/头像1.jpg" alt="个人头像" width="45" height="45"class="img-circle"name="small_head"onmouseover="over(this)" onmouseleave="leave(this)"></li>
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false">您好 ${sessionScope.admin.name} <span
+								class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a（暂时不可点击）
+									href="${pageContext.request.contextPath}/AdminServlet?action=logout">注销（暂时不可点击）</a></li>
+								<li><a href="http://localhost:8080/myweb/edit_change_admin.jsp">修改账户（暂时不可点击）</a></li>
+							</ul></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<!-- container -->
+	</nav>
+
+	<!-- 左边导航 -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li class="active"><a href="#">前期准备 <span class="sr-only">(current)</span></a></li>
+					<li><a href="http://localhost:8080/myweb/edit_personal.jsp">三角洲平面取样（暂时不可点击）</a></li>
+					<li><a href="#">沉积过程分析（暂时不可点击）</a></li>
+					<li><a href="#">待续</a></li>
+				</ul>
+				<ul class="nav nav-sidebar">
+					<li><a href="">待续</a></li>
+					<li><a href="">待续</a></li>
+					<li><a href="">待续</a></li>
+					<li><a href="">待续</a></li>
+					<li><a href="">待续</a></li>
+				</ul>
+				<ul class="nav nav-sidebar">
+					<li><a href="">待续</a></li>
+					<li><a href="">待续</a></li>
+					<li><a href="http://localhost:8080/myweb/edit_change_admin.jsp">修改账户信息（暂时不可点击）</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" >
+				<h1 class="page-header">图片</h1>
+				<div class="row placeholders">
+					<div class="col-xs-6 col-sm-3 placeholder">
+						<img
+							src=""
+							width="200" height="200" 
+							alt="Generic placeholder thumbnail">
+						<h4>某图</h4>
+						<span class="text-muted">简单介绍</span>
+					</div>
+					<div class="col-xs-6 col-sm-3 placeholder">
+						<img
+							src=""
+							width="200" height="200" 
+							alt="Generic placeholder thumbnail">
+						<h4>某图</h4>
+						<span class="text-muted">简单介绍</span>
+					</div>
+					<div class="col-xs-6 col-sm-3 placeholder">
+						<img
+							src=""
+							width="200" height="200" 
+							alt="Generic placeholder thumbnail">
+						<h4>某图</h4>
+						<span class="text-muted">简单介绍</span>
+					</div>
+					<div class="col-xs-6 col-sm-3 placeholder">
+						<img
+							src=""
+							width="200" height="200" 
+							alt="Generic placeholder thumbnail">
+						<h4>某图</h4>
+						<span class="text-muted">简单介绍</span>
+					</div>
+				</div>
+
+				<h2 class="sub-header">项目具体</h2>
+				<div class="table-responsive">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>时间（起）</th>
+								<th>时间（至）</th>
+								<th>地区</th>
+								<th>某某</th>
+								<th>某某</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>20**年*月</td>
+								<td>20**年*月</td>
+								<td>山东***</td>
+								<td>*********</td>
+								<td>无</td>
+							</tr>
+							<tr>
+								<td>20**年*月</td>
+								<td>20**年*月</td>
+								<td>山东***</td>
+								<td>*********</td>
+								<td>无</td>
+							</tr>
+							<tr>
+								<td>20**年*月</td>
+								<td>20**年*月</td>
+								<td>山东***</td>
+								<td>*********</td>
+								<td>无</td>
+							</tr>
+							<tr>
+								<td>20**年*月</td>
+								<td>20**年*月</td>
+								<td>山东***</td>
+								<td>*********</td>
+								<td>无</td>
+							</tr>
+							<tr>
+								<td>未完待续。。</td>
+								<td>未完待续。。</td>
+								<td>未完待续。。</td>
+								<td>未完待续。。</td>
+								<td>未完待续。。</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+	<!-- Bootstrap core JavaScript-->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="bootstrap-3.3.7-dist/js/jquery.min.js"></script>
+	<script>
+		window.jQuery
+				|| document
+						.write('<script src="bootstrap-3.3.7-dist/js/jquery.min.js"><\/script>')
+	</script>
+	<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<script src="bootstrap-3.3.7-dist/js/docs.min.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="bootstrap-3.3.7-dist/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>

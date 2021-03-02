@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+ul {
+	/*<!--琴键之间的距离*/
+	margin: 0px;
+	padding: 0px;
+}
+
+.entirety {
+	/*整体的宽度和高度*/
+	width: 580px;
+	height: 360px;
+	margin: 50px auto;
+}
+
+li {
+	/*float属性指定一个盒子（元素）是否应该浮动。*/
+	float: left;
+	list-style-type: none;
+	position: relative;
+}
+
+li>div {
+	/*这是对琴键进心边框背景设置 */
+	/*<!--琴键高度*/
+	height: 360px;
+	/*琴键宽度*/
+	width: 60px;
+	/*边框宽度 */
+	border: 2px solid;
+	/*琴键背景*/
+	border-color: #666;
+	/*琴键左下圆角 */
+	border-bottom-left-radius: 8px;
+	/*琴键右下圆角*/
+	border-bottom-right-radius: 8px;
+	box-sizing: border-box;
+	box-shadow: /*inset  3px 0  10px  #c9c6c6,*/ inset 5px -8px 0 #eeebeb;
+}
+
+li:not (:last-child )>div {
+	/*简写属性把右边框的所有属性设置到一个声明中*/
+	border-right: none;
+}
+
+li>div:hover {
+	background: linear-gradient(45deg, #dad9d9, #ffffff);
+}
+
+li>div:active {
+	box-shadow: inset 3px -2px 0 #eeebeb;
+}
+
+.entirety>li>p {
+	/*黑键的相关设置*/
+	height: 200px;
+	width: 40px;
+	background-color: #000;
+	/*黑键的圆角*/
+	border-bottom-left-radius: 5.5px;
+	border-bottom-right-radius: 5.5px;
+	box-shadow: inset 5px -7px 0 #2c2c2c;
+	position: absolute;
+	top: 0;
+	left: 40px;
+	z-index: 999;
+}
+
+li>p:hover {
+	background: linear-gradient(45deg, #4c4c4c, #444444);
+}
+
+li>p:active {
+	box-shadow: inset 3px -5px 0 #2c2c2c;
+}
