@@ -26,6 +26,10 @@
 
 <!-- 设置悬停事件 -->
 <script>
+	//初始化页面
+	window.onload = function(){
+		document.getElementById("content").innerHTML = '<object type="text/html" data=潮控三角洲.html width="100%" height="50%"></object>';
+	}
 	//悬停事件
 	function over(x) {
 		with (x) {
@@ -40,7 +44,7 @@
 	}
 	function content_change(name){
 		document.getElementById("header").innerHTML=name.substring(0, name.indexOf('.'))
-		document.getElementById("iframe1").src=name
+		document.getElementById("content").innerHTML = '<object type="text/html" data='+ name +' width="100%" height="50%"></object>';
 	}
 
 
@@ -109,9 +113,7 @@
 		<div class="page-header">
 			<h1 id="header">潮控三角洲</h1>
 		</div>
-		<div class="well" >
-			<iframe src="潮控三角洲.html" id=iframe1 width=1100px height=400px></iframe>
-			
+		<div class="well" id="content">
 		</div>
 
 		<!-- 按钮 -->
